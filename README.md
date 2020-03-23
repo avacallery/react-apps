@@ -49,3 +49,23 @@ ES7 Will give us some shortcuts to snippets of code so we can easily create comp
 Sublime Babel will give us some syntax highlight for when we write JSX for our component template 
 
 ~~~
+
+React Components (Vid.4): 
+
+- Create a React component to take control of the div we made in the previous video
+- We use classes to blueprint in JavaScript 
+        //we have access to the React object & inheriting the base functionality of Component by doing the dot notation
+        //class-based components must have 1 function (render) 
+        //render is what is responsible for rendering our template to whatever element we want to render to in this case <div id=app>
+- We need only ONE root element in our component <div>
+- We use className instead of class for our css 
+
+How to we render this to the Dom? 
+ ReactDOM.render(<App />, document.getElementById('app')); 
+ 
+(first parameter is what component we want to render to the DOM (in a tag), and the second parameter is WHERE we want to render it to the DOM)
+
+Babel will transpire our code so the browser can read it!
+- JSX won't be read by the browser on its own, for that, we use: 
+Babeljs.io 
+- Setup, In The Browser, grab script tags
