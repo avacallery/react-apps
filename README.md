@@ -29,3 +29,23 @@ COMPONENTS
 - look like HTML templates, but they're actually JSX (JavaScript XML) 
 - They contain the 'state' (data or UI state) 
 - also contain JavaScript for functionality 
+
+~~~
+
+React Setup (with CDN) (Vid.3): 
+
+React CDN Setup - 
+
+https://reactjs.org/docs/cdn-links.html
+
+- Copy the two script tags at the top of the page and paste them in your html file under meta-name
+- the top script tag is the CORE REACT LIBRARY
+- the bottom script tag is the REACT DOM LIBRARY 
+
+- create div tag for app 
+
+- Install packages: ES7 React/Redux/GraphQL/React-Native Snippets and Sublime Babel
+ES7 Will give us some shortcuts to snippets of code so we can easily create components or imports etc. 
+Sublime Babel will give us some syntax highlight for when we write JSX for our component template 
+
+~~~
