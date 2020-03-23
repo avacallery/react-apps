@@ -63,7 +63,7 @@ React Components (Vid.4):
 How to we render this to the Dom? 
  ReactDOM.render(<App />, document.getElementById('app')); 
  
-(first parameter is what component we want to render to the DOM (in a tag), and the second parameter is WHERE we want to render it to the DOM)
+    //(first parameter is what component we want to render to the DOM (in a tag), and the second parameter is WHERE we want to render it to the DOM)
 
 Babel will transpire our code so the browser can read it!
 - JSX won't be read by the browser on its own, for that, we use: 
