@@ -69,3 +69,13 @@ Babel will transpire our code so the browser can read it!
 - JSX won't be read by the browser on its own, for that, we use: 
 Babeljs.io 
 - Setup, In The Browser, grab script tags
+
+~~~
+
+Component State (Vid.5): 
+
+- The state of the DATA or UI of the component 
+- The state of a component can be updated over time (a model could close, the data we output could change) 
+- Keeping the STATE and the OUTPUT in sync with each other 
+
+- In this video, we're going to add STATE to the component we made in the previous video.
