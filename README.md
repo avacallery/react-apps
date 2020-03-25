@@ -79,3 +79,8 @@ Component State (Vid.5):
 - Keeping the STATE and the OUTPUT in sync with each other 
 
 - In this video, we're going to add STATE to the component we made in the previous video.
+- adding state = {} is our INITIAL STATE
+- We want to output the state to the template!
+- It is dynamic content, so it will be wrapped {} 
+- overtime, the state is going to change
+
