@@ -84,3 +84,18 @@ Component State (Vid.5):
 - It is dynamic content, so it will be wrapped {} 
 - overtime, the state is going to change
 
+~~~
+
+React Dev Tools (Vid.6): 
+
+- Install React Developer Tools on Google Chrome
+- This will help you when you're developing applications 
+        - keep track of the state and the different components in your app
+- React tab in the Inspect to do some testing
+        - you can see all the different components a React app is using
+
+~~~
+
+DOM Events (Vid.7): 
+
+
