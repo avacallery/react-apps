@@ -94,8 +94,19 @@ React Dev Tools (Vid.6):
 - React tab in the Inspect to do some testing
         - you can see all the different components a React app is using
 
+** Whenever we change the state of a component, that component is going to rerender the template to the DOM to reflect that change (in INSPECT)
+
 ~~~
 
 DOM Events (Vid.7): 
 
+ - Create simple Click event with a Button
+ - We create the function that will run when we click the button under the state of the component
+ - <button onClick={this.handleClick}>Click Me</button>
+ - We have to say this.handleClick because this refers to the component which the function is stored 
+ - We also created an onHover function and an onCopy function! 
 
+ ~~~
+
+ Changing State (and 'this') (Vid.8): 
+ 
