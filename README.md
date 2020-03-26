@@ -150,3 +150,14 @@ Single Page App (Vid.11):
 - Only ever one HTML page served to browser from the server
 - React then contols (and updates) what a user sees on the page depending on how they interact with it
 - React "saves the trip" of the request/response with the server and makes our app faster 
+
+                        npx create-react-app my-app
+                        cd my-app
+                        npm start
+
+~~~
+
+Nesting Components (Vid.12): 
+
+- There is (1) root component at the top of the tree. 
+- All other components are nested within that component 
