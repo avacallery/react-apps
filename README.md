@@ -155,9 +155,30 @@ Single Page App (Vid.11):
                         cd my-app
                         npm start
 
-~~~
+~~~~
 
 Nesting Components (Vid.12): 
 
 - There is (1) root component at the top of the tree. 
 - All other components are nested within that component 
+
+~~~~
+
+Props (Vid.13): 
+
+- We have parent components and child components. 
+- children components (ex. Ninjas) are nested within the parent component (ex. App)
+-  PROPS are a way for us to pass data from one component (parent) to another component (the child) without hardcoding
+
+** PROPS - short for PROPERTIES
+- we can access the props we code into parent by using this.props (this referencing to the component, .props to access the props object on this component) 
+
+** DESTRUCTURING: 
+
+const { name, age, belt } = this.props
+
+- INSTEAD OF - 
+
+{ this.props.name }
+{ this.props.age }
+{ this.props.belt }
