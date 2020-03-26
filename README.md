@@ -194,3 +194,25 @@ Outputting Lists (Vid.14):
 - inside the function we return JSX for each item 
 - stores JSX in a new array called ninjaList
 - output ninjaList 
+
+~~~
+
+Stateless Components (Vid.15): 
+
+** Container Components (App.js, ContactForm.js) 
+        - Contain state
+        - Contain lifecycle hooks
+        - Not concerned with how the app looks
+        - Use classes to create
+
+** UI Components (Navbar.js, Ninjas.js)
+        - Don't contain state
+        - Recieve all data from props
+        - Concerned with how the app looks
+        - Use functions to create
+
+** Reformat Ninjas.js so it is a FUNCTIONAL COMPONENT (HOW is the data outputted) 
+- when we use a functional component like this, we don't automatically get the props passed to it like we do inside of a class-based component
+- we have to take the props in as a PERAMETER to the function then we can access them without using (this)
+- you can have multiple parameters if you destructure it like 
+const Ninjas = ({ninjas, shopping, age}) =>
