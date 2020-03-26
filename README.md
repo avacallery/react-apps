@@ -133,4 +133,14 @@ DOM Events (Vid.7):
 
 ~~~
 
+Create React App (Vid.10): 
+
+- a command line tool to create React apps
+- Allows us to supercharge our React app and use :
+       a development server, 
+       use ES6 features, 
+       keep our code modular, 
+       and use build tools to create optimized code
+
+
 
