@@ -155,14 +155,14 @@ Single Page App (Vid.11):
                         cd my-app
                         npm start
 
-~~~~
+~~~
 
 Nesting Components (Vid.12): 
 
 - There is (1) root component at the top of the tree. 
 - All other components are nested within that component 
 
-~~~~
+~~~
 
 Props (Vid.13): 
 
@@ -182,3 +182,15 @@ const { name, age, belt } = this.props
 { this.props.name }
 { this.props.age }
 { this.props.belt }
+
+~~~
+
+Outputting Lists (Vid.14): 
+
+- Cycle through data: 
+- get original array which we assigned and imported from the state (ninjas)
+- we MAP through the array and get each individual item in the array 
+- perform a function for each individual item 
+- inside the function we return JSX for each item 
+- stores JSX in a new array called ninjaList
+- output ninjaList 
