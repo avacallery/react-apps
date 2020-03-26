@@ -110,3 +110,27 @@ DOM Events (Vid.7):
 
  Changing State (and 'this') (Vid.8): 
  
+ - We cannot access this.state in our functions, but we CAN in our template (!?)
+ - This has to do with the VALUE of this. in the two different locations 
+ - In JavaScript, the context of this. keyword inside of a function is generally determined by how/where the function is called, NOT by where the function sits (?!)
+- We have to manually bind the context of the this keyword to our functions
+- In the render() method, we CAN access this.state
+        - that is a built-in React function so it automatically binds this.state to the function 
+        - outside of render(), we have to do it ourselves
+
+** The solution is AN ARROW FUNCTION! => 
+        - Arrow functions bind the value of this. to whatever this is outside of the function (inside the class component in this example) 
+
+        EXAMPLE: handleClick = (e) => {
+                this.setState({
+                    name: 'Yoshi',
+                    age: 25
+                });
+                console.log(this.state); 
+            };
+
+        this.setState function changed the name from 'Ryu' to 'Yoshi' and the age from 30 to 25
+
+~~~
+
+
