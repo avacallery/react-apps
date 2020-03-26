@@ -142,5 +142,11 @@ Create React App (Vid.10):
        keep our code modular, 
        and use build tools to create optimized code
 
+~~~
 
+Single Page App (Vid.11): 
 
+- React apps are typically SPA's
+- Only ever one HTML page served to browser from the server
+- React then contols (and updates) what a user sees on the page depending on how they interact with it
+- React "saves the trip" of the request/response with the server and makes our app faster 
