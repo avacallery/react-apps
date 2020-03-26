@@ -133,4 +133,15 @@ DOM Events (Vid.7):
 
 ~~~
 
+Intro to Forms (Vid.9): 
 
+- Most React websites use inputs in one way or another ... aka with forms! 
+
+** React when an Input Field is changed: 
+- How do we detect when a user is typing into the input we write in our code, and then change the STATE (the name) of what they type? 
+        - We use an event onChange() in the input field
+        - e.target is the input field, on this target we have the property called VALUE and that gets the value of whatever is typed into the input field at the moment where this function handleChange is fired
+
+** React when a Form is submitted: 
+- We do not want the default behavior of submit (refresh)
+- We want to prevent this by using e.preventDefault(); 
