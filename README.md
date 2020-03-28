@@ -385,3 +385,11 @@ To do this in our app:
         - create Post.js which will be a class-based component 
         - this is where we will write a funtion that will grab that dynamic content 
         - inside of this component we can identify what the route parameter is and that is "fricken awesome" lol 
+
+~~~
+
+Route Parameters - Part 2 (Vid.31): 
+
+From the home page, we want to be able to click an individual post, have it bring us to its own page, and display information. 
+        - We need to surround the title with a Link tag which will link us to the separate component
+
