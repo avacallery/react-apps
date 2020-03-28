@@ -375,3 +375,13 @@ Using Axios (Vid.29):
 ~~~
 
 Route Parameters - Part 1 (Vid.30): 
+
+- Part of a URL that can change 
+- Usually see them on URLs for individual records (profile routes)
+
+To do this in our app: 
+        - Set up Post param in App.js 
+                <Route path='/:post_id' component={Post} />
+        - create Post.js which will be a class-based component 
+        - this is where we will write a funtion that will grab that dynamic content 
+        - inside of this component we can identify what the route parameter is and that is "fricken awesome" lol 
