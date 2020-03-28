@@ -277,4 +277,20 @@ Delete objects from the array: output a button for each object in the array with
         - output a delete button for each ninja in this component 
         - wrap function in an anonymous function so deleteNinja will only fire when the button is clicked 
                 - <button onClick={() => {deleteNinja(ninja.id)}}></button>
-        - In App.js, we can use filter() to cycle through the array to return a copy of the array with whatever we filter out, aka the id that we pass through 
+        - In App.js, we can use filter() to cycle through the array to return a copy of the array with whatever we filter out, aka the id that we pass through
+
+~~~
+
+Recap & Virtual DOM (Vid.20): 
+
+- We are working with states, props, and functions so far
+
+Ninjas.js (UI Components) <- App.js Container -> AddNinja.js Container 
+- App.js passes the prop (ninjas) to Ninjas.js
+- App.js passes the prop (addNinja) to AddNinja.js
+- everytime we get an updated prop, we update the jsx template and React makes the new Virtual DOM
+- the NEW Virtual DOM and CURRENT Virtual DOM are compared and the differences are updates to the browser (the DOM) 
+
+~~~ 
+
+CSS Files (Vid.21): 
