@@ -242,3 +242,27 @@ Forms Revisited (Vid.17):
         - We want to update the state depending on where the user has typed
         - this.setState({[e.target.id]}); 
         - Using id of the target element, we can query the id and use it to update the property 
+
+~~~
+
+Functions as Props (Vid.18): 
+
+// Pass a function down as a prop into another component 
+// Call that function from the component 
+// Pass information back up to the parent component & alter the state of the parent component 
+
+- Add new ninja object to the state of the root component (ninjas in App.js) so it updates to the browser 
+        - Create function (addNinja) inside App Component that will add new ninja to the state
+        - takes perameter of new object (ninja)
+        - pass addNinja={this.addNinja} as a prop in component AddNinja so we can call that function insisde that component
+        - in AddNinjas.js, in handleSubmit
+                - this.props.addNinja(), which takes the expected ninja object as a parameter (this.state) because this object looks like what we're submitting
+
+- take new ninja object and add it to the state in App.js
+        - in App.js, in addNinja, we want to assign random id for new object
+                - ninja.id = Math.random(); (this will do for now)
+        - set the state! but do not alter the original state
+        - instead, we will create a copy of the array, and add the new ninja to the copy of the array, and then assign new array to ninjas (in addNinja in App.js)
+                - SPREAD OPERATOR: let ninjas = [...this.state.ninjas, ninja]
+        - then, set the state 
+                - this.setState({ ninjas: ninjas })
