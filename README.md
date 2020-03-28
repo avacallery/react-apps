@@ -294,3 +294,14 @@ Ninjas.js (UI Components) <- App.js Container -> AddNinja.js Container
 ~~~ 
 
 CSS Files (Vid.21): 
+
+- Importing CSS into a component will add to the rest of the components (EX: background pink)
+- scope your styles (EX: .ninjas form { background: pink})
+
+https://blog.pusher.com/css-modules-react/
+
+~~~
+
+Lifecycle Methods (Vid.22): 
+
+Mounting, Updating, and Unmounting 
