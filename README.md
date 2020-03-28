@@ -228,3 +228,13 @@ HOW?
 - Use ternary operator in JavaScript 
         - condition ? () : () 
 - Nest it directly into the return template
+
+~~~
+
+Forms Revisited (Vid.17): 
+
+- Create new file called AddNinja.js 
+- Class-based component or UI component? 
+        - We need to store locally what a user types in to each input field on a component state. 
+        - Because we need that state, this will be a class-based component. 
+- Create a form to submit a new ninja and log it to the console

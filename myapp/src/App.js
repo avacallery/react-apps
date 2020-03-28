@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Ninjas from './Ninjas';
+import AddNinja from './AddNinja';
 
 //root component that sits at the top of the tree 
 //parent component
@@ -17,6 +18,7 @@ class App extends Component {
         <h1>My first React app!</h1>
         <p>Welcome :-)</p>
         <Ninjas ninjas={this.state.ninjas} />
+        <AddNinja />
       </div>
     );
   }
