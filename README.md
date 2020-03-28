@@ -317,3 +317,9 @@ Mounting, Updating, and Unmounting
   }
 
   - this will log our updated/changed data to the console
+
+  ~~~
+
+  Todo App (Part 1 & 2) Videos 23 and 24 found in separate repository 
+
+  ~~~
