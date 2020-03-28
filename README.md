@@ -363,3 +363,15 @@ Higher Order Components (Vid.28):
         - return WrappedComponent
         - export
         - use on About component (wrap About in Rainbow at the bottom of About)
+
+~~~
+
+Using Axios (Vid.29): 
+
+- Typically we want to grab data from another source
+- Use npm i axios to fetch data and import it from another source 
+- store it to the state and cycle through it in the template - and don't pull your hair out when it doesn't work for20 min 
+
+~~~
+
+Route Parameters - Part 1 (Vid.30): 
