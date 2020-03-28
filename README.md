@@ -350,3 +350,16 @@ Redirect a user to a different page
 
 - we use the higher order component withRouter to supercharge Navbar... with this we can log the props to the console
 
+~~~
+
+Higher Order Components (Vid.28): 
+
+- Functions which wrap other components and give them extra features
+- For example, we use this with Navbar.js. We pass it into the Higher Order Component. withRouter added props to the Navbar component so we could log props info to the console
+
+- Create a higher order component to generate a new text color every time you refresh the page
+        - Create a function (Rainbow in Rainbow.js) that takes WrappedComponent as its parameter 
+        - Write whatever you want to happen in the function (in this case, it was to randomize a list of colors)
+        - return WrappedComponent
+        - export
+        - use on About component (wrap About in Rainbow at the bottom of About)
