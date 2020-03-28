@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Todos from './Todos' 
+import AddTodo from './AddTodo'
 
 class App extends Component {
   state = {
@@ -16,6 +17,13 @@ class App extends Component {
       todos: todos
     })
   }
+  addTodo = (todo) => {
+    todo.id = Math.random(); 
+    let todos = [...this.state.todos, todo];
+    this.setState({
+      todos: todos
+    })
+  }
   // if todo.id is NOT equal to id, we do not want to filter out
   render() {
     return (
@@ -24,6 +32,7 @@ class App extends Component {
         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/> 
         {/* We use curly braces in todos={} because we're 
         passing in something that is dynamic */}
+        <AddTodo addTodo={this.addTodo}/>
       </div>
     );
   }
