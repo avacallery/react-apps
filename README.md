@@ -323,3 +323,8 @@ Mounting, Updating, and Unmounting
   Todo App (Part 1 & 2) Videos 23 and 24 found in separate repository 
 
   ~~~
+
+  The React Router (Vid.25): 
+
+  - The React Router intercepts requests from going to the server and coming back by just injecting the component it needs to to the root component 
+  - npm i react-router-dom is the package that allows us to set up the router inside of Poke'Times (Home, About, Contact)
