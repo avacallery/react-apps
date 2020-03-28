@@ -216,3 +216,15 @@ Stateless Components (Vid.15):
 - we have to take the props in as a PERAMETER to the function then we can access them without using (this)
 - you can have multiple parameters if you destructure it like 
 const Ninjas = ({ninjas, shopping, age}) =>
+
+~~~
+
+Condtional Output (Vid.16): 
+
+- Sometimes we want to only want to show something to a user based on certain conditions: if they're logged in, if they have 5 items in their shopping cart, etc. 
+
+HOW? 
+- You can use an If statement above the return statement when we are outputting the new ninjaList 
+- Use ternary operator in JavaScript 
+        - condition ? () : () 
+- Nest it directly into the return template
