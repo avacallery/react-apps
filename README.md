@@ -238,3 +238,7 @@ Forms Revisited (Vid.17):
         - We need to store locally what a user types in to each input field on a component state. 
         - Because we need that state, this will be a class-based component. 
 - Create a form to submit a new ninja and log it to the console
+- Create a function (onChange) that will update on the fly whatever the user types into the inputs
+        - We want to update the state depending on where the user has typed
+        - this.setState({[e.target.id]}); 
+        - Using id of the target element, we can query the id and use it to update the property 
