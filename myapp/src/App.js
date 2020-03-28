@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Ninjas from './Ninjas';
 import AddNinja from './AddNinja';
+import './Ninjas.css'
+import './index.css'
 
 //root component that sits at the top of the tree 
 //parent component
@@ -26,6 +28,13 @@ class App extends Component {
     this.setState({
       ninjas: ninjas
     })
+  }
+  componentDidMount(){
+    console.log('Component mounted.')
+  }
+  componentDidUpdate(prevProps, prevState){
+    console.log('Components updated.')
+    console.log(prevProps, prevState)
   }
   render() {
     return (

@@ -304,4 +304,16 @@ https://blog.pusher.com/css-modules-react/
 
 Lifecycle Methods (Vid.22): 
 
-Mounting, Updating, and Unmounting 
+Mounting, Updating, and Unmounting
+
+- We can compare the previous state and the updated state in the console by using these functions in App.js: 
+
+        componentDidMount(){
+        console.log('Component mounted.')
+  }
+        componentDidUpdate(prevProps, prevState){
+        console.log('Components updated.')
+        console.log(prevProps, prevState)
+  }
+
+  - this will log our updated/changed data to the console
