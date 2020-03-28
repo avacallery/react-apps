@@ -328,3 +328,25 @@ Mounting, Updating, and Unmounting
 
   - The React Router intercepts requests from going to the server and coming back by just injecting the component it needs to to the root component 
   - npm i react-router-dom is the package that allows us to set up the router inside of Poke'Times (Home, About, Contact)
+
+  ~~~
+
+  Links & NavLinks (Vid.26): 
+
+  - We want React to come take over so we don't keep on reloading the page when we navigate through our routes by using Link and NavLink tags 
+        - this prevents the default action when we click the anchor tags
+
+~~~
+
+Programmatic Redirects (Vid.27): 
+
+Redirect a user to a different page
+- console.log the props in Contact.js to view the history 
+
+        const Contact = (props) => {
+                setTimeout(() => {
+                props.history.push('/about')
+        }, 2000)
+
+- we use the higher order component withRouter to supercharge Navbar... with this we can log the props to the console
+
