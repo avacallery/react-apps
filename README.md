@@ -266,3 +266,15 @@ Functions as Props (Vid.18):
                 - SPREAD OPERATOR: let ninjas = [...this.state.ninjas, ninja]
         - then, set the state 
                 - this.setState({ ninjas: ninjas })
+
+~~~
+
+Deleting Data (Vid.19): 
+
+Delete objects from the array: output a button for each object in the array with an onClick function that will delete
+        - Create and pass function (deleteNinja) down as a prop so we can use it in the Ninjas component
+        - pass deleteNinja as a parameter in Ninjas (in Ninjas.js)
+        - output a delete button for each ninja in this component 
+        - wrap function in an anonymous function so deleteNinja will only fire when the button is clicked 
+                - <button onClick={() => {deleteNinja(ninja.id)}}></button>
+        - In App.js, we can use filter() to cycle through the array to return a copy of the array with whatever we filter out, aka the id that we pass through 
