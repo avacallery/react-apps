@@ -393,3 +393,11 @@ Route Parameters - Part 2 (Vid.31):
 From the home page, we want to be able to click an individual post, have it bring us to its own page, and display information. 
         - We need to surround the title with a Link tag which will link us to the separate component
 
+~~~
+
+Switch Tag (Vid.32): 
+
+We need a way to load the proper routes so /contact will just display Content information and /:post_id will just be a post! 
+
+        - This is where the switch tag comes in. 
+        - One route will take precedence and Switch will take the first route that matches and load 
