@@ -401,3 +401,13 @@ We need a way to load the proper routes so /contact will just display Content in
 
         - This is where the switch tag comes in. 
         - One route will take precedence and Switch will take the first route that matches and load 
+
+~~~
+
+Importing Images (Vid.33): 
+
+        - Import the image you want to use
+        - import in the Home component because we want to display an image for every post
+        - style using css & pay attention to how the classes are nested! 
+
+~~~
