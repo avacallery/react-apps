@@ -429,7 +429,8 @@ Redux Stores (Vid.35):
 
 - Create your Redux data store and import Redux 
         - const store = createStore(myreducer)
-        - myreducer is a function we pass through that takes parameters: the state and the initSate and the action 
+        - myreducer is a function we pass through that takes parameters: the state and the action 
+        - reducer will take the initState if there's nothing there/added
         - we the reducer will dispatch the action and change the state of the store based on the action 
 ~~~
 
@@ -444,3 +445,24 @@ example: store.dispatch(todoAction)
 
 ~~~
 
+Redux Reducers (Vid.37): 
+
+After we dispatch an action, the reducer will evaluate the action and see what needs to take place. 
+
+We want to add a todo, so we create a new array. We do this in our reducer funtion: 
+
+        function myreducer(state = initState, action){
+                if (action.type == 'ADD_TODO'){
+                        return {
+                                todos: [...state.todos, action.todo]
+                        }
+                }
+        }
+
+~~~
+
+Store Subscriptions (Vid.38): 
+
+- Subscribe to the store to listen for changes and react to changes in the store
+- we do this in a component in React 
+        store.subscribe(() => { console.log(store.getState())}) }; 
