@@ -466,3 +466,23 @@ Store Subscriptions (Vid.38):
 - Subscribe to the store to listen for changes and react to changes in the store
 - we do this in a component in React 
         store.subscribe(() => { console.log(store.getState())}) }; 
+
+~~~
+
+Setting up Redux in React
+
+- npm i redux 
+        - this is a library we use to create the store
+- npm i react-redux
+        - the library that connects our app to the store 
+
+How do we associate the store with our react app? 
+        - by using react-redux component { Provider }
+
+                ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+                registerServiceWorker(); 
+
+        - Now we pass our store in our application
+
+- create reducers folder in src 
+- create reducer file that we will then import to the index.js file and pass it through createStore() 
