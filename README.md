@@ -411,3 +411,14 @@ Importing Images (Vid.33):
         - style using css & pay attention to how the classes are nested! 
 
 ~~~
+
+Redux (Vid.34): 
+
+- Central data store for all app data
+- Any component can access data from it 
+- Makes state management easy
+
+- Define central store in Redux
+- if in a component we want to grab some data, the component subscribes to make changes, and redux passes using props 
+- if component makes a change, it dispatches action (which describes the changes we want to make, ex. make a post) and the payload to the reducer 
+- reducer and evaluates the changes and updates the redux data store
