@@ -431,5 +431,16 @@ Redux Stores (Vid.35):
         - const store = createStore(myreducer)
         - myreducer is a function we pass through that takes parameters: the state and the initSate and the action 
         - we the reducer will dispatch the action and change the state of the store based on the action 
-        - action is a JavaScript object 
-                - const todoAction = { type: 'ADD_TODO' }
+~~~
+
+Redux Actions (Vid.36): 
+
+- Action is a JavaScript object that we pass through as a parameter for the reducer 
+
+exmaple: const todoAction = { type: 'ADD_TODO', todo: 'play Animal Crossing'}
+
+- dispatch the action
+example: store.dispatch(todoAction) 
+
+~~~
+
