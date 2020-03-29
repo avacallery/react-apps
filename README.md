@@ -531,3 +531,6 @@ Map Dispatch To Props (Vid.42):
 ~~~
 
 Action Creators (Vid.43): 
+
+- just functions that generate an action for us
+- instead of writing out a bunch of new actions, we can reuse an action creator funciton and just call it where we need to 

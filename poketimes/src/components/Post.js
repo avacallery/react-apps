@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { deletePost } from '../actions/postActions'
 
 class Post extends Component {
     handleClick = () => {
@@ -48,9 +49,11 @@ const mapDispatchToProps = (dispatch) => {
     return {
         //this function takes parameter (the id of the post we want to delete)
         // id: id is the payload we want to send, aka the id we pass through
-        deletePost: (id) => { dispatch({ type: 'DELETE_POST', id: id }) }
+        deletePost: (id) => {
+            dispatch(deletePost(id))
+        }
     }
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Post)
+    export default connect(mapStateToProps, mapDispatchToProps)(Post)
