@@ -418,7 +418,18 @@ Redux (Vid.34):
 - Any component can access data from it 
 - Makes state management easy
 
-- Define central store in Redux
+- Define central store in Redux (a JavaScript object which will represent the global state)
 - if in a component we want to grab some data, the component subscribes to make changes, and redux passes using props 
 - if component makes a change, it dispatches action (which describes the changes we want to make, ex. make a post) and the payload to the reducer 
-- reducer and evaluates the changes and updates the redux data store
+- reducer (a single function aka the robot that sits outside of the Redux warehouse) evaluates the changes and updates the redux data store
+
+~~~
+
+Redux Stores (Vid.35): 
+
+- Create your Redux data store and import Redux 
+        - const store = createStore(myreducer)
+        - myreducer is a function we pass through that takes parameters: the state and the initSate and the action 
+        - we the reducer will dispatch the action and change the state of the store based on the action 
+        - action is a JavaScript object 
+                - const todoAction = { type: 'ADD_TODO' }
