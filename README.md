@@ -509,3 +509,10 @@ Mapping State to Props (Vid.40):
 - we then pass this function inside connect() so when we connect to redux it knows what data we want to grab from redux (state.posts) and the property we want to apply that data to (props)
 
                 export default connect(mapStateToProps)(Home)
+
+~~~
+
+Blog Detail Page (Vid.41): 
+
+- we want to be able to click on a post and receive the actual data from the state
+- we connect Post component to our redux store, and we find individual post by using the find() method and using the route parameter (id) and we apply that to a Post object on our props so we can use it in the component

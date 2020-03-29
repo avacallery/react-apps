@@ -1,27 +1,14 @@
 //class based component
 
 import React, { Component } from 'react'
-import axios from 'axios'
+import { connect } from 'react-redux'
 
 class Post extends Component {
-    state = {
-        post: null
-    }
-    componentDidMount() {
-        let id = this.props.match.params.post_id;
-        axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
-            .then(res => {
-                this.setState({
-                    post: res.data
-                })
-            })
-    }
     render() {
-
-        const post = this.state.post ? (
+        const post = this.props.post ? (
             <div className="post">
-                <h4 className="center">{this.state.post.title}</h4>
-                <p>{this.state.post.body}</p>
+                <h4 className="center">{this.props.post.title}</h4>
+                <p>{this.props.post.body}</p>
             </div>
         ) : (
             <div className="center">Loading post...</div>
@@ -35,4 +22,15 @@ class Post extends Component {
     }
 }
 
-export default Post
+//ownProps refers to the props of this Post component before we attach the props from the redux store
+const mapStateToProps = (state, ownProps) => {
+    //this is where we get the info for the route params
+    let id = ownProps.match.params.post_id; 
+    return {
+        //this will cycle through the posts on the id object and if the id matches it will return that post
+        //we've attached the post object to the props 
+        post: state.posts.find(post => post.id === id)
+    }
+}
+
+export default connect(mapStateToProps)(Post)
