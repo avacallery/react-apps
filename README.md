@@ -486,3 +486,26 @@ How do we associate the store with our react app?
 
 - create reducers folder in src 
 - create reducer file that we will then import to the index.js file and pass it through createStore() 
+
+~~~
+
+Mapping State to Props (Vid.40): 
+
+- we need to connect our components to the store so we can interact with the state and get data from the state
+
+
+- we need to import a higher order component from the library so we can use it to connect the Home.js component to the store
+- we do this by using { connect } and wrapping the component we want to connect
+
+                export default connect()(Home)
+
+- we still have to retrieve the data we want from the store
+- if a component wants access, we need to map the data it wants from the store
+
+- create function mapStateToProps = (state) => { }
+- do map state to props, we have to return it in an object
+- this object represents the different properties we want to add to the props 
+- (for example -- posts: state.props)
+- we then pass this function inside connect() so when we connect to redux it knows what data we want to grab from redux (state.posts) and the property we want to apply that data to (props)
+
+                export default connect(mapStateToProps)(Home)
