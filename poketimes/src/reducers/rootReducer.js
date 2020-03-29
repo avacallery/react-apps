@@ -6,7 +6,21 @@ const initState = {
     ]
 }
 
+//filter() performs a function on each individual post, and if we return true for that function, then we return it in the new array. If it returns false, we filter it out of the new array.
+
 const rootReducer = (state = initState, action) => {
+    if (action.type === 'DELETE_POST') {
+        let newPosts = state.posts.filter(post => {
+            return action.id !== post.id
+        });
+        //return new object that represents the new state
+        return {
+        //take current state and spread so all the properties in the state are returned in this object first
+        // then we override posts with newPosts
+            ...state,
+            posts: newPosts
+        }
+    }
     return state;
 }
 

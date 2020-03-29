@@ -516,3 +516,18 @@ Blog Detail Page (Vid.41):
 
 - we want to be able to click on a post and receive the actual data from the state
 - we connect Post component to our redux store, and we find individual post by using the find() method and using the route parameter (id) and we apply that to a Post object on our props so we can use it in the component
+
+~~~
+
+Map Dispatch To Props (Vid.42): 
+
+- What if we want to change the state? (Delete a post?)
+- we have to dispatch an action from the component with an optional payload (in a delete post, the id will be the payload)
+
+- we call the function deletePost, which is firing the function down in mapDispatchToProps, and inside of that function we are making a dispatch and sending the action { type: 'DELETE_POST, id: id } to the reducer
+- in rootReducer.js more detailed notes 
+- in Post.js more detailed notes
+
+~~~
+
+Action Creators (Vid.43): 
