@@ -6,7 +6,7 @@ const Bulletpoints = ({bulletpoints}) => {
             return (
                 <div className="collection-item" key={bulletpoint.id}>
                     <span>
-                        {bulletpoint.content}
+                        <p>* {bulletpoint.content} </p>
                     </span>
                 </div>
             )

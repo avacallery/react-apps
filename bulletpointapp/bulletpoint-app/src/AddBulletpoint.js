@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class AddBulletPoint extends Component {
     state = {
-        content: '* ',
+        content: '',
     }
         handleChange = (e) => {
             this.setState({
@@ -13,7 +13,7 @@ class AddBulletPoint extends Component {
             e.preventDefault(); 
             this.props.addBulletpoint(this.state);
             this.setState({
-                content: '* '
+                content: ' '
             })
         }
     render() {
