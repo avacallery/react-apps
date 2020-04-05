@@ -357,6 +357,8 @@ Higher Order Components (Vid.28):
 - Functions which wrap other components and give them extra features
 - For example, we use this with Navbar.js. We pass it into the Higher Order Component. withRouter added props to the Navbar component so we could log props info to the console
 
+- inheritence - passing the power down through the DOM 
+
 - Create a higher order component to generate a new text color every time you refresh the page
         - Create a function (Rainbow in Rainbow.js) that takes WrappedComponent as its parameter 
         - Write whatever you want to happen in the function (in this case, it was to randomize a list of colors)
