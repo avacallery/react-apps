@@ -4,7 +4,7 @@ const Bulletpoints = ({bulletpoints}) => {
     const bulletpointList = bulletpoints.length ? (
         bulletpoints.map(bulletpoint => {
             return (
-                <div className="collection-item" key={bulletpoint.id}>
+                <div className="collection-item">
                     <span>
                         <p>* {bulletpoint.content} </p>
                     </span>
