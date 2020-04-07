@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
+//{ } extracts component property 
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+//turn functional component into class-based component 
 
-    </div>
-  );
+//App will (inherit...extends) gain all the properties of Component 
+//that's how we're going to get props/state/mounting etc 
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Welcome to BrainHive!</h1>
+      </div>
+    );
+  }
 }
 
 export default App;

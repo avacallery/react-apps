@@ -4,10 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+//This function puts App on the DOM 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+  //attach App to this element 
   document.getElementById('root')
 );
 
