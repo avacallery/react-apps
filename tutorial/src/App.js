@@ -23,8 +23,8 @@ class App extends Component {
     return (
       <div className="App">
         <p>Employee list:</p>
-        {data.map((employee) => (
-          <p key={user.id}>{user.email}</p>
+        {employees.map((employee) => (
+          <p key={employee.employee_id}>{employee.employee_name}</p>
         ))}
       </div>
     );
