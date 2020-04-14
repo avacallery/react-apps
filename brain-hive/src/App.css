@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 0 10%; 
 }
 
 .App-logo {
@@ -38,7 +39,14 @@
 }
 
 .box {
-  border: 1px solid blueviolet;
-  background-color: lightgoldenrodyellow;
-
+  background-color: #F7F7F7;
+  border: 1px solid #f6f6f6;
+  border-radius: 8px;
+  border-bottom-width: 0px;
+  box-shadow: 0px 10px 10px black; 
+  padding-bottom: 8px; 
+  margin-bottom: 20px; 
+  width: 80%;
+  max-width: 800px; 
 }
+

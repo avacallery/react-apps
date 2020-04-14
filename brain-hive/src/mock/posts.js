@@ -13,7 +13,8 @@ const posts = [
           videoLength: null,
           timeToComplete: 3,
           rating: 5,
-          comments: [{ commenter: "Cliff", text: "Nice post" }],
+          comments: [{ commenter: "Cliff", text: "Nice post" }
+            ],
         },
         {
           posterName: "Ava Callery",
@@ -30,8 +31,7 @@ const posts = [
           videoLength: 5,
           timeToComplete: 8,
           rating: 5,
-          comments: [
-            { commenter: "Shaun Pelling", text: "Remember to subscribe, mate." },
+          comments: [{ commenter: "Shaun Pelling", text: "Remember to subscribe, mate." },
           ],
         },
         {

@@ -17,7 +17,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Welcome to BrainHive!</h1>
+        <div className="postList">
         {this.renderPosts()}
+        </div>
       </div>
     );
   }
