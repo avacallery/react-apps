@@ -29,18 +29,21 @@ class PostForm extends Component {
                         type="text"
                         id="resourceAuthor"
                         placeholder="Author Name" 
-                        value={this.state.resourceAuthor}/>
+                        value={this.state.resourceAuthor}
+                        onChange={(e) => {this.handleChange(e)}}/>
                     {/* dropdown skill level */}
                     <input
                         type="text"
                         id="cohort"
                         placeholder="Cohort #" 
-                        value={this.state.cohort}/>
+                        value={this.state.cohort}
+                        onChange={(e) => {this.handleChange(e)}}/>
                     <input
                         type="text"
                         id="title"
                         placeholder="title"
-                        value={this.state.title} />
+                        value={this.state.title}
+                        onChange={(e) => {this.handleChange(e)}}/>
                     <button type="submit">Submit</button>
                 </form>
             </div>
