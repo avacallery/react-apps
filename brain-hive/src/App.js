@@ -3,6 +3,8 @@ import Post from './components/Post'
 import './App.css';
 import posts from './mock/posts';
 
+import PostForm from './components/PostForm';
+
 class App extends Component {
 
   renderPosts = () => {
@@ -23,6 +25,7 @@ class App extends Component {
           </div>
         </div>
         <div className="postList">{this.renderPosts()}</div>
+        <PostForm />
       </div>
     );
   }
