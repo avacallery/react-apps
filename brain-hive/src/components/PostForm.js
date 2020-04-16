@@ -15,7 +15,7 @@ class PostForm extends Component {
         });
     };
 
-    render() {
+    render() { 
         return (
             <div>
                 <form style={myStyles.form}>
