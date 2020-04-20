@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 class PostForm extends Component {
   state = {
     posterName: "",
@@ -26,13 +27,13 @@ class PostForm extends Component {
     return (
       <div>
         <form style={myStyles.form}>
-          {/* <label htmlFor="posterName">Your Name: </label> */}
           <input
             type="text"
             id="posterName"
             placeholder="Your Name"
             value={this.state.posterName}
             onChange={(e) => this.handleChange(e)}
+            required
           />
           <input
             type="text"
@@ -43,9 +44,13 @@ class PostForm extends Component {
           />
           {/* dropdown skill level */}
           <div>
-            <select>
+            <select 
+            id="jobSkillLevel"
+            value={this.state.jobSkillLevel} 
+            onChange={(e) => this.handleChange(e)}
+            >
               <option value="" disabled>
-                Author skill level
+                Author skill levels
               </option>
               <option value="Intro">Intro</option>
               <option value="Intermediate">Intermediate</option>
@@ -95,24 +100,24 @@ class PostForm extends Component {
             onChange={(e) => this.handleChange(e)}
           />
           <input
-            type="text"
+            type="number"
             id="videoLength"
             placeholder="Length of Video (optional)"
-            value={this.state.link}
+            value={this.state.videoLength}
             onChange={(e) => this.handleChange(e)}
           />
           <input
-            type="text"
+            type="number"
             id="timeToComplete"
             placeholder="Time to complete resource"
-            value={this.state.link}
+            value={this.state.timeToComplete}
             onChange={(e) => this.handleChange(e)}
           />
           <input
-            type="text"
+            type="number"
             id="rating"
             placeholder="1 to 5 raiting"
-            value={this.state.link}
+            value={this.state.rating}
             onChange={(e) => this.handleChange(e)}
           />
           <button type="submit">Submit</button>
