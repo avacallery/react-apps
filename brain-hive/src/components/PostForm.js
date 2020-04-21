@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { Button } from react;
+
+//when we use this, we are using it because it is a class-based component
+//this.setState is the same thing as PostForm.setState
+//setState is PART of the component class
+//handleChange and submitChange are part of the PostForm class, so when we want to use it, we have to use this.handleChange()
+//the difference is using a local variable (not using this.) or a class state (using this.)
+//class-based components always need a render() method
 
 class PostForm extends Component {
   state = {
@@ -151,18 +157,43 @@ class PostForm extends Component {
             value={this.state.rating}
             onChange={(e) => this.handleChange(e)}
           />
-          <Button type="submit">Submit</Button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     );
   }
 }
+
 const myStyles = {
   form: {
     display: "flex",
-    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    marginRight: "20%",
+    marginLeft: "20%",
+    flexDirection: "column",
+  },
+  input: {
+    width: "70%",
+    height: 32,
+    fontSize: 20,
+    marginBottom: 4,
+  },
+  button: {
+    alignSelf: "center",
+    // backgroundColor: "#F96295",
+    backgroundColor: "#ff62a1",
+    marginLeft: 5,
+    marginRight: 5,
+    marginBottom: 10,
+    marginTop: 5,
+    width: "50%",
+    //maxWidth:
+    borderRadius: 10,
+    fontSize: 16,
+    paddingTop: 10,
+    paddingBottom: 10,
   },
 };
+
 export default PostForm;

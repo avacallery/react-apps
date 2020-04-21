@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import Post from './components/Post'
+import {BrowserRouter, Route} from 'react-router-dom'; 
 import './App.css';
-import posts from './mock/posts';
+import PostList from './components/PostList';
 import PostForm from './components/PostForm';
+import Navbar from './components/Navbar';
+import posts from './mock/posts';
+//this makes it so we're routing between 
+
 
 class App extends Component {
   state = {
@@ -20,26 +24,15 @@ class App extends Component {
     });
   };
 
-  renderPosts = () => {
-    const display = this.state.posts.map((post) => {
-      //importing prop from Post component and reassigning
-      return <Post post={post} />
-    })
-    return display;
-  }
-
   render() {
     return (
-      <div className="App">
-        <div className="header">
-          <h1 id="brand">Welcome to BrainHive!</h1>
-          <div id="navigation">
-            <button> <a href="">Add Post</a></button>
-          </div>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar /> 
+          <PostList postList={this.state.posts}/> 
+          <PostForm addPost={this.addPost} />
         </div>
-        <div className="postList">{this.renderPosts()}</div>
-        <PostForm addPost={this.addPost} />
-      </div>
+      </BrowserRouter>
     );
   }
 }
