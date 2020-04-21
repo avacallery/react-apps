@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
@@ -29,12 +29,14 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
+          <Switch>
           <Route path="/" exact>
             <PostList posts={this.state.posts} />
           </Route>
           <Route path="/add" exact>
             <PostForm addPost={this.addPost} />
           </Route>
+          </Switch>
         </div>
       </BrowserRouter>
     );

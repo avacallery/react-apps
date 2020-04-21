@@ -1,15 +1,19 @@
-import React from 'react'; 
+import React from 'react';
+import { Link } from 'react-router-dom'; 
 
 const Navbar = (props) => {
     return (
         <div className="header">
-            <h1 id="brand">Welcome to BrainHive!</h1>
+
+            <h1 id="brand">
+                <Link to="/">Welcome to BrainHive!</Link>
+            </h1>
             <div id="navigation">
-                <button> 
-                <a href="">Add Post</a></button>
+                <button>
+                    <Link to="/add">Add Post</Link></button>
             </div>
-            </div>
-        ); 
-}; 
+        </div>
+    );
+};
 
 export default Navbar; 
