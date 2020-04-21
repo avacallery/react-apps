@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route} from 'react-router-dom'; 
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
@@ -17,10 +17,10 @@ class App extends Component {
   //push new data into the array of objects in Mock.js
   //this is now a function that is a part of the root state
   addPost = (postData) => {
-    console.log("hello", postData); 
+    console.log("hello", postData);
     this.setState({
-      posts: [...this.state.posts, 
-      postData],
+      posts: [...this.state.posts,
+        postData],
     });
   };
 
@@ -28,9 +28,13 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Navbar /> 
-          <PostList posts={this.state.posts}/> 
-          <PostForm addPost={this.addPost} />
+          <Navbar />
+          <Route path="/" exact>
+            <PostList posts={this.state.posts} />
+          </Route>
+          <Route path="/add" exact>
+            <PostForm addPost={this.addPost} />
+          </Route>
         </div>
       </BrowserRouter>
     );
