@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from react;
 
 class PostForm extends Component {
   state = {
@@ -15,18 +16,48 @@ class PostForm extends Component {
     videoLength: "",
     timeToComplete: "",
     raiting: "",
+    comments: []
   };
   handleChange = (e) => {
-    console.log(this.state);
     this.setState({
       ...this.state,
       [e.target.id]: e.target.value,
     });
   };
+
+    //take state and load into our mock file array of objects
+  handleSubmit = (e) => {
+      e.preventDefault(); 
+    //add any form validation via JavaScript
+    //{...this.state} pulls apart the object into a new object
+    //outside of the render, brackets {} are object-oriented
+    const postData = {...this.state};
+    postData.categories = postData.categories.split(',');
+    //send data back to App.js
+    this.props.addPost(postData); 
+    this.setState({
+            posterName: "",
+            resourceAuthor: "",
+            jobSkillLevel: "",
+            cohort: "",
+            title: "",
+            categories: "",
+            summary: "",
+            link: "",
+            resourceType: "",
+            datePublished: null,
+            videoLength: "",
+            timeToComplete: "",
+            raiting: "",
+            comments: [],
+    }); 
+  };
+
   render() {
     return (
       <div>
-        <form style={myStyles.form}>
+        <form style={myStyles.form} 
+        onSubmit={(e) => this.handleSubmit(e)}>
           <input
             type="text"
             id="posterName"
@@ -50,7 +81,7 @@ class PostForm extends Component {
             onChange={(e) => this.handleChange(e)}
             >
               <option value="" disabled>
-                Author skill levels
+                Author Skill Levels
               </option>
               <option value="Intro">Intro</option>
               <option value="Intermediate">Intermediate</option>
@@ -74,7 +105,7 @@ class PostForm extends Component {
           <input
             type="text"
             id="categories"
-            placeholder="Categories (seperate multiple with commas)"
+            placeholder="Categories (seperate multiples with commas)"
             value={this.state.categories}
             onChange={(e) => this.handleChange(e)}
           />
@@ -120,7 +151,7 @@ class PostForm extends Component {
             value={this.state.rating}
             onChange={(e) => this.handleChange(e)}
           />
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </form>
       </div>
     );
