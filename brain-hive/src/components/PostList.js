@@ -1,9 +1,12 @@
 import React from 'react'; 
 import Post from './Post'; 
 
+//the whole functional component is basically a render method 
+//PostList has a function (renderPosts) inside of a function
+
 const PostList = (props) => {
     const renderPosts = () => {
-        const display = props.posts.map((post) => {
+        const display = props.postList.map((post) => {
           return <Post post={post} />
         });
         return display;
