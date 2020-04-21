@@ -29,7 +29,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar /> 
-          <PostList postList={this.state.posts}/> 
+          <PostList posts={this.state.posts}/> 
           <PostForm addPost={this.addPost} />
         </div>
       </BrowserRouter>
