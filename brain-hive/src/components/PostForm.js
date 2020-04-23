@@ -7,6 +7,8 @@ import React, { Component } from "react";
 //the difference is using a local variable (not using this.) or a class state (using this.)
 //class-based components always need a render() method
 
+//we match state with the html ids we use below
+
 class PostForm extends Component {
   state = {
     posterName: "",
@@ -32,11 +34,13 @@ class PostForm extends Component {
   };
 
     //take state and load into our mock file array of objects
+
+    //methods are functions inside of a class (handleSubmit)
+    //we don't have to use const because it becomes part of PostForm as a key
   handleSubmit = (e) => {
       e.preventDefault(); 
     //add any form validation via JavaScript
     //{...this.state} pulls apart the object into a new object
-    //outside of the render, brackets {} are object-oriented
     const postData = {...this.state};
     postData.categories = postData.categories.split(',');
     //send data back to App.js
