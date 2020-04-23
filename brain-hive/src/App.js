@@ -21,6 +21,7 @@ class App extends Component {
   //push new data into the array of objects in Mock.js
   //this is now a function that is a part of the root state
   addPost = (postData) => {
+    postData.id = this.state.posts.length + 1;
     console.log("hello", postData);
     this.setState({
       posts: [...this.state.posts,

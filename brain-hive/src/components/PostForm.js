@@ -50,7 +50,7 @@ class PostForm extends Component {
       e.preventDefault(); 
     //add any form validation via JavaScript
     //{...this.state} pulls apart the object into a new object
-    const postData = {...this.state};
+    const postData = {...this.state}; 
     postData.categories = postData.categories.split(',');
     //send data back to App.js
     this.props.addPost(postData); 
@@ -64,7 +64,7 @@ class PostForm extends Component {
             summary: "",
             link: "",
             resourceType: "",
-            datePublished: null,
+            datePublished: "",
             videoLength: "",
             timeToComplete: "",
             raiting: "",
