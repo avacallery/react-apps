@@ -4,19 +4,18 @@ import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
 import Navbar from './components/Navbar';
-import posts from './mock/posts';
+import INITIAL_POSTS from './mock/posts';
 //this makes it so we're routing between 
 
 
 class App extends Component {
   state = {
     //load initial posts
-    posts: [...posts],
+    posts: [...INITIAL_POSTS],
   };
 
   componentDidMount = () => {
     console.log("Mounting app.js"); 
-    this.setState({ posts: [...posts] })
   };
 
   //push new data into the array of objects in Mock.js
@@ -41,6 +40,7 @@ class App extends Component {
           <Route path="/add" exact>
             <PostForm addPost={this.addPost} />
           </Route>
+          <Route path="/post/:postid" />
           </Switch>
         </div>
       </BrowserRouter>

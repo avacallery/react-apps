@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 //static value in all caps 
 //should NOT be modified
+
 const INITIAL_STATE = {
-  posterName: "",
+            posterName: "",
             resourceAuthor: "",
             jobSkillLevel: "",
             cohort: "",
@@ -27,11 +28,12 @@ const INITIAL_STATE = {
 //class-based components always need a render() method
 
 class PostForm extends Component {
+  state = { ...INITIAL_STATE};
 
-  componentDidMount = () => {
-    console.log("Mounting Form.");
-    this.setState({ ...INITIAL_STATE });
-  };
+  // componentDidMount = () => {
+  //   console.log("Mounting Form.");
+  //   this.setState({ ...INITIAL_STATE });
+  // };
 
   handleChange = (e) => {
     this.setState({
