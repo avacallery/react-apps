@@ -14,6 +14,11 @@ class App extends Component {
     posts: [...posts],
   };
 
+  componentDidMount = () => {
+    console.log("Mounting app.js"); 
+    this.setState({ posts: [...posts] })
+  };
+
   //push new data into the array of objects in Mock.js
   //this is now a function that is a part of the root state
   addPost = (postData) => {

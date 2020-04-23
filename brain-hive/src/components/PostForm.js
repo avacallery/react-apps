@@ -1,5 +1,24 @@
 import React, { Component } from "react";
 
+//static value in all caps 
+//should NOT be modified
+const INITIAL_STATE = {
+  posterName: "",
+            resourceAuthor: "",
+            jobSkillLevel: "",
+            cohort: "",
+            title: "",
+            categories: "",
+            summary: "",
+            link: "",
+            resourceType: "",
+            datePublished: null,
+            videoLength: "",
+            timeToComplete: "",
+            raiting: "",
+            comments: []
+}
+
 //when we use this, we are using it because it is a class-based component
 //this.setState is the same thing as PostForm.setState
 //setState is PART of the component class
@@ -7,25 +26,13 @@ import React, { Component } from "react";
 //the difference is using a local variable (not using this.) or a class state (using this.)
 //class-based components always need a render() method
 
-//we match state with the html ids we use below
-
 class PostForm extends Component {
-  state = {
-    posterName: "",
-    resourceAuthor: "",
-    jobSkillLevel: "",
-    cohort: "",
-    title: "",
-    categories: "",
-    summary: "",
-    link: "",
-    resourceType: "",
-    datePublished: null,
-    videoLength: "",
-    timeToComplete: "",
-    raiting: "",
-    comments: []
+
+  componentDidMount = () => {
+    console.log("Mounting Form.");
+    this.setState({ ...INITIAL_STATE });
   };
+
   handleChange = (e) => {
     this.setState({
       ...this.state,
