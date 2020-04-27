@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'; 
 
+//Post.js will display on an individual post and control redirect onClick
+
 class Post extends Component {
     state = {
         clicked: false

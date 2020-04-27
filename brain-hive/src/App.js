@@ -6,7 +6,6 @@ import PostForm from './components/PostForm';
 import ViewPost from './components/ViewPost';
 import Navbar from './components/Navbar';
 import INITIAL_POSTS from './mock/posts';
-//this makes it so we're routing between 
 
 //App maintains what Post is being viewed (which Post has been selected? What should I display?)
 class App extends Component {
@@ -22,8 +21,8 @@ class App extends Component {
     console.log("Mounting app.js"); 
   };
 
-  //push new data into the array of objects in Mock.js
-  //this is now a function that is a part of the root state
+  //push postData into the array of objects in Mock.js
+  //addPost is now a function that is a part of the root state
   addPost = (postData) => {
     postData.id = this.state.posts.length + 1;
     console.log("hello", postData);
