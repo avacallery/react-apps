@@ -7,7 +7,8 @@ import Post from './Post';
 const PostList = (props) => {
     const renderPosts = () => {
         const display = props.posts.map((post) => {
-          return <Post post={post} key={post.id}/>
+          return <Post post={post} key={post.id}
+          handleSelect = {props.handleSelect} />
         });
         return display;
       };
