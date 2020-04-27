@@ -20,7 +20,7 @@ const INITIAL_STATE = {
             comments: []
 }
 
-//when we use this, we are using it because it is a class-based component
+//when we use this., we are using it because it is a class-based component
 //this.setState is the same thing as PostForm.setState
 //setState is PART of the component class
 //handleChange and submitChange are part of the PostForm class, so when we want to use it, we have to use this.handleChange()
@@ -30,11 +30,6 @@ const INITIAL_STATE = {
 class PostForm extends Component {
   state = { ...INITIAL_STATE};
 
-  // componentDidMount = () => {
-  //   console.log("Mounting Form.");
-  //   this.setState({ ...INITIAL_STATE });
-  // };
-
   handleChange = (e) => {
     this.setState({
       ...this.state,
@@ -43,16 +38,14 @@ class PostForm extends Component {
   };
 
     //take state and load into our mock file array of objects
-
     //methods are functions inside of a class (handleSubmit)
     //we don't have to use const because it becomes part of PostForm as a key
   handleSubmit = (e) => {
       e.preventDefault(); 
-    //add any form validation via JavaScript
     //{...this.state} pulls apart the object into a new object
     const postData = {...this.state}; 
     postData.categories = postData.categories.split(',');
-    //send data back to App.js
+    //send state back to App.js
     this.props.addPost(postData); 
     this.setState({
             posterName: "",
