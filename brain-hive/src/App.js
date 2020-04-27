@@ -10,6 +10,7 @@ import INITIAL_POSTS from './mock/posts';
 
 
 class App extends Component {
+  //"global" state without redux
   state = {
     //load initial posts
     posts: [...INITIAL_POSTS],
