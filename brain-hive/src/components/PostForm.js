@@ -60,7 +60,7 @@ class PostForm extends Component {
             datePublished: "",
             videoLength: "",
             timeToComplete: "",
-            raiting: "",
+            rating: "",
             comments: [],
     }); 
   };
