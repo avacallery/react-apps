@@ -8,9 +8,10 @@ import Navbar from './components/Navbar';
 import INITIAL_POSTS from './mock/posts';
 //this makes it so we're routing between 
 
-
+//App maintains what Post is being viewed (which Post has been selected? What should I display?)
 class App extends Component {
-  //"global" state without redux
+  //"global" state without redux 
+  //state of the app - what is selected
   state = {
     //load initial posts
     posts: [...INITIAL_POSTS],
@@ -41,6 +42,7 @@ class App extends Component {
     })
   }
 
+  //App.js maintains the state by using our routing system and deciding where to go based on what is selected
   render() {
     return (
       <BrowserRouter>
@@ -48,14 +50,17 @@ class App extends Component {
           <Navbar />
           <Switch>
           <Route path="/" exact>
-            <PostList posts={this.state.posts} 
+            <PostList 
+              posts={this.state.posts} 
               handleSelect={this.handleSelect} />
           </Route>
           <Route path="/add" exact>
-            <PostForm addPost={this.addPost} />
+            <PostForm 
+              addPost={this.addPost} />
           </Route>
           <Route path="/post/:postId">
-          <ViewPost post={this.state.posts[this.state.selected - 1]}/>
+          <ViewPost 
+              post={this.state.posts[this.state.selected - 1]}/>
           </Route>
           </Switch>
         </div>
