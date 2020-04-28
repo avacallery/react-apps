@@ -27,7 +27,7 @@ const posts = [
           categories: ["react", "redux"],
           summary:
             "This was a quick video that efficiently shows how to nest components in a React app.",
-          link: "https://www.youtube.com/watch?v=dQublHlGgBw",
+          link: "www.youtube.com/watch?v=dQublHlGgBw",
           resourceType: "Video",
           datePublished: "2018-08-10.00:00:00z",
           videoLength: 5,
@@ -64,7 +64,7 @@ const posts = [
           summary:
             "This was a great article about React components, props, and state.",
           link:
-            "https://www.freecodecamp.org/news/start-your-journey-into-the-world-of-react-by-learning-these-basics-d6e05d3655e3/",
+            "www.freecodecamp.org/news/start-your-journey-into-the-world-of-react-by-learning-these-basics-d6e05d3655e3/",
           resourceType: "Article",
           datePublished: "2019-06-03.00:00:00z",
           videoLength: null,
@@ -83,7 +83,7 @@ const posts = [
           summary:
             "This was a good article about designing software architecure for cloud computing",
           link:
-            "http://couldpatterns.org/mechanismis/cloud_storage_management_portal",
+            "couldpatterns.org/mechanismis/cloud_storage_management_portal",
           resourceType: "Article",
           datePublished: "2011-01-19.00:00:00z",
           videoLength: null,
@@ -119,7 +119,7 @@ const posts = [
           summary:
             "This article explains the benefits of approach of Presentational Components",
           link:
-            "https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0",
+            "medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0",
           resourceType: "Article",
           datePublished: "2017-23-03.00:00:00z",
           videoLength: null,

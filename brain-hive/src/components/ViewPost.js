@@ -14,7 +14,7 @@ const ViewPost = (props) => {
         <h4>Rating: {post.rating}</h4>
         <i>"{post.summary}"</i>
         <p>Time to complete: {post.timeToComplete} minutes</p>
-        <a href={post.link}>Click to view article.</a>
+        <a href={`http://${post.link}`}>Click to view article.</a>
         </div>
     )
     //.map you will use to display comments
