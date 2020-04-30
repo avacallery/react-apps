@@ -5,6 +5,7 @@ const ViewPost = (props) => {
     //extract postid from parameter
     const { postId } = useParams(); 
     const { post } = props; 
+    // const post = props.post[postId -1 ]; 
 
     return(
         <div className="selectedPost">
