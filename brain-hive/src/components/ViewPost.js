@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import Button from './common/Button'; 
 
 class ViewPost extends Component {
     state = {
@@ -21,6 +22,7 @@ class ViewPost extends Component {
             <i>"{post.summary}"</i>
             <p>Time to complete: {post.timeToComplete} minutes</p>
             <a href={`http://${post.link}`}>Click to view article.</a>
+            <button>{this.state.showComments ? "Hide Comments" : "Show Comments"}</button>
             </div>
         );
     }
