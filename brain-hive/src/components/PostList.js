@@ -15,27 +15,46 @@ class PostList extends Component {
     //state always needs to maintain the original posts
     query: "",
     filteredPosts: [...this.props.posts],
+  };
+
+  handleChange = (e) => {
+    //pull updated text
+    const query = e.target.value;
+
+    const newPosts = this.props.posts.filter((post) => {
+      //test to see if value is part of the title
+      if (post.title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+        return true;
+      }
+        return false;
+    });
+
+    this.setState({
+      query: query, 
+      filteredPosts: newPosts,
+    })
   }
 
-    renderPosts = () => {
-      const display = this.state.filteredPosts.map((post) => {
-        return <Post
-          post={post}
-          key={post.id}
-          handleSelect={this.props.handleSelect} />
-      });
-      return display;
-    };
+  renderPosts = () => {
+    const display = this.state.filteredPosts.map((post) => {
+      return <Post
+        post={post}
+        key={post.id}
+        handleSelect={this.props.handleSelect} />
+    });
+    return display;
+  };
 
-    render() {
+  render() {
     return (
       <div>
         {/* TODO: add searchbar  */}
         <div style={myStyles.searchBar}>
           <input style={myStyles.input}
             type="text"
-            placeholder="Search">
-          </input>
+            placeholder="Search"
+            onChange={this.handleChange}
+            />
         </div>
         <div className="postList">{this.renderPosts()}</div>
       </div>
