@@ -26,6 +26,10 @@ class PostList extends Component {
       if (post.title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
         return true;
       }
+      //another condition
+      if (post.summary.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+        return true;
+      }
         return false;
     });
 
