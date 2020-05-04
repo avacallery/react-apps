@@ -16,7 +16,7 @@ class ViewPost extends Component {
     renderComments = (post) => {
         return post.comments.map((comment) => {
             return (
-                <div className="box">
+                <div key={comment.commenter} className="box">
                     <p>{comment.commenter}</p>
                     <p>{comment.text}</p>
                 </div>
@@ -43,7 +43,8 @@ class ViewPost extends Component {
                 <br></br>
                 <Button onClick={this.clickHandler}>
                     {this.state.showComments ? "Hide Comments" : "Show Comments"}
-                    </Button>
+                </Button>
+                {this.state.showComments ? this.renderComments(post) : null}
             </div>
         );
     }
