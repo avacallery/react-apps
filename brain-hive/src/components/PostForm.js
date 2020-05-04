@@ -164,7 +164,7 @@ class PostForm extends Component {
             value={this.state.rating}
             onChange={(e) => this.handleChange(e)}
           />
-          <Button text='Select' /> 
+          <Button type="Submit">Select</Button>
         </form>
       </div>
     );

@@ -1,12 +1,13 @@
-import React from 'react'; 
+import React from 'react';
 
 const Button = (props) => {
-    return (
-    <button style={myStyles.botton} type="submit">{props.text}</button>
-    )
+    return <button style={myStyles.button} 
+    {...props}>
+    {props.children}
+    </button>;
 }
 
-myStyles = {
+const myStyles = {
     button: {
         alignSelf: "center",
         // backgroundColor: "#F96295",
@@ -21,7 +22,7 @@ myStyles = {
         fontSize: 16,
         paddingTop: 10,
         paddingBottom: 10,
-      }
-}
+    }
+};
 
 export default Button; 
