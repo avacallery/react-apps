@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Post from './Post';
 
 //the whole functional component is basically a render method 
@@ -9,33 +9,45 @@ import Post from './Post';
 //PostList display posts based on the keys selected
 //PostList hands the baton of handleSelect to Post.js
 
-const PostList = (props) => {
-  const renderPosts = () => {
-    const display = props.posts.map((post) => {
-      return <Post
-        post={post}
-        key={post.id}
-        handleSelect={props.handleSelect} />
-    });
-    return display;
-  };
+class PostList extends Component {
 
-  return (
-    <div>
-      {/* TODO: add searchbar  */}
-      <div style={myStyles.searchBar}>
-        <input style={myStyles.input} type="text" placeholder="Search"></input>
+  state = {
+    //state always needs to maintain the original posts
+    query: "",
+    filteredPosts: [...this.props.posts],
+  }
+
+    renderPosts = () => {
+      const display = this.state.filteredPosts.map((post) => {
+        return <Post
+          post={post}
+          key={post.id}
+          handleSelect={this.props.handleSelect} />
+      });
+      return display;
+    };
+
+    render() {
+    return (
+      <div>
+        {/* TODO: add searchbar  */}
+        <div style={myStyles.searchBar}>
+          <input style={myStyles.input}
+            type="text"
+            placeholder="Search">
+          </input>
         </div>
-      <div className="postList">{renderPosts()}</div>
-    </div>
-  );
+        <div className="postList">{this.renderPosts()}</div>
+      </div>
+    );
+  };
 };
 
 const myStyles = {
   searchBar: {
     flex: 1,
-    flexDirection: 'row', 
-    marginLeft: '30%', 
+    flexDirection: 'row',
+    marginLeft: '30%',
     marginRight: '30%',
     marginBottom: 16,
     height: 32
