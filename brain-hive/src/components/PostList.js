@@ -1,5 +1,5 @@
-import React from 'react'; 
-import Post from './Post'; 
+import React from 'react';
+import Post from './Post';
 
 //the whole functional component is basically a render method 
 //PostList has a function (renderPosts) inside of a function
@@ -10,19 +10,42 @@ import Post from './Post';
 //PostList hands the baton of handleSelect to Post.js
 
 const PostList = (props) => {
-    const renderPosts = () => {
-        const display = props.posts.map((post) => {
-          return <Post 
-            post={post} 
-            key={post.id}
-            handleSelect={props.handleSelect}/>
-        });
-        return display;
-      };
+  const renderPosts = () => {
+    const display = props.posts.map((post) => {
+      return <Post
+        post={post}
+        key={post.id}
+        handleSelect={props.handleSelect} />
+    });
+    return display;
+  };
 
-    return (
-        <div className="postList">{renderPosts()}</div>
-    );
+  return (
+    <div>
+      {/* TODO: add searchbar  */}
+      <div style={myStyles.searchBar}>
+        <input style={myStyles.input} type="text" placeholder="Search"></input>
+        </div>
+      <div className="postList">{renderPosts()}</div>
+    </div>
+  );
 };
+
+const myStyles = {
+  searchBar: {
+    flex: 1,
+    flexDirection: 'row', 
+    marginLeft: '30%', 
+    marginRight: '30%',
+    marginBottom: 16,
+    height: 32
+  },
+  input: {
+    width: "70%",
+    height: 32,
+    fontSize: 20,
+    marginBottom: 4,
+  }
+}
 
 export default PostList; 

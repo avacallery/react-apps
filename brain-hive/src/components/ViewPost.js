@@ -24,6 +24,15 @@ class ViewPost extends Component {
         });
     };
 
+    renderStars = (post) => {
+        const rating = post.rating; 
+        let stars = ""; 
+        for (let  i = 0; i < rating; i++) {
+            stars += "* "; 
+        }
+        return stars; 
+    }
+
     render() {
         // const props = this.props; 
         //extract postid from parameter
@@ -36,7 +45,7 @@ class ViewPost extends Component {
                 <h1>{post.title}</h1>
                 <h2>{post.resourceAuthor}</h2>
                 <h4>Submitted by: {post.posterName}, Cohort: {post.cohort}</h4>
-                <h4>Rating: {post.rating}</h4>
+                <h4>Rating: {this.renderStars(post)}</h4>
                 <i>"{post.summary}"</i>
                 <p>Time to complete: {post.timeToComplete} minutes</p>
                 <a href={`http://${post.link}`}>Click to view article.</a>
