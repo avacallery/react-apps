@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
@@ -18,7 +20,7 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    console.log("Mounting app.js"); 
+    console.log("Mounting app.js");
   };
 
   //push postData into the array of objects in Mock.js
@@ -29,13 +31,13 @@ class App extends Component {
     console.log("hello", postData);
     this.setState({
       ...this.state,
-        posts: [...this.state.posts,
+      posts: [...this.state.posts,
         postData],
     });
   };
 
   handleSelect = (id) => {
-    console.log("Click", id); 
+    console.log("Click", id);
     this.setState({
       ...this.state,
       selected: id
@@ -45,26 +47,28 @@ class App extends Component {
   //App.js maintains the state by using our routing system and deciding where to go based on what is selected
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <Navbar />
-          <Switch>
-          <Route path="/" exact>
-            <PostList 
-              posts={this.state.posts} 
-              handleSelect={this.handleSelect} />
-          </Route>
-          <Route path="/add" exact>
-            <PostForm 
-              addPost={this.addPost} />
-          </Route>
-          <Route path="/post/:postId">
-          <ViewPost 
-              post={this.state.posts[this.state.selected - 1]}/>
-          </Route>
-          </Switch>
-        </div>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className="App">
+            <Navbar />
+            <Switch>
+              <Route path="/" exact>
+                <PostList
+                  posts={this.state.posts}
+                  handleSelect={this.handleSelect} />
+              </Route>
+              <Route path="/add" exact>
+                <PostForm
+                  addPost={this.addPost} />
+              </Route>
+              <Route path="/post/:postId">
+                <ViewPost
+                  post={this.state.posts[this.state.selected - 1]} />
+              </Route>
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
