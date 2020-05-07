@@ -78,6 +78,6 @@ const myStyles = {
     fontSize: 20,
     marginBottom: 4,
   }
-}
+};
 
 export default PostList; 

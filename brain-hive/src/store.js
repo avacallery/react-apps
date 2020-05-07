@@ -2,6 +2,8 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk'; 
 import reducers from './reducers'; 
 
+//react is using the store as global state
+
 const INITIAL_STATE = {}; 
 
 const middleware = [thunk];
