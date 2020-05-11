@@ -58,7 +58,7 @@ class ViewPost extends Component {
         );
     }
     //.map you will use to display comments
-}
+};
 
 
 export default withRouter(ViewPost); 

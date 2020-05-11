@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'; 
+import { increment } from '../actions';
 import Post from './Post';
 
 //PostList is iterating through the array of posts by using .map and displaying a new array of posts
@@ -34,6 +36,10 @@ class PostList extends Component {
       query: query, 
       filteredPosts: newPosts,
     })
+  };
+
+  handleClick = () => {
+    this.props.increment(this.props.count);
   }
 
   renderPosts = () => {
@@ -58,6 +64,10 @@ class PostList extends Component {
             />
         </div>
         <div className="postList">{this.renderPosts()}</div>
+        <div className="footer">
+              <button onClick={this.handleClick}>increase</button>
+              <p>{this.props.count}</p>
+            </div>
       </div>
     );
   };
@@ -80,4 +90,12 @@ const myStyles = {
   }
 };
 
-export default PostList; 
+const mapStoreToProps = (store) => {
+  return {
+    count: store.posts.count,
+  };
+};
+
+export default connect(mapStoreToProps, {
+  increment: increment
+})(PostList); 
