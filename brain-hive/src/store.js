@@ -14,6 +14,9 @@ const store = createStore(
     reducers,
     INITIAL_STATE, 
     composeEnhancers(applyMiddleware(...middleware))
+    //we put our middleware in an array,
+    //dynamically, how do we get this list to display as separate entities?
+    //the spread operator (...middleware) does this 
 );
 
 export default store; 
