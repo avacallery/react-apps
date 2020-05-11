@@ -3,10 +3,13 @@
 
 //THIS IS OUR STORE!!!
 
+//combine our reducers into one store
 import {combineReducers} from 'redux'; 
 import postsReducer from './postsReducer';
+import addPostReducer from './addPostReducer';
 
 export default combineReducers({
     //an object that gives each reducer a key
-    posts: postsReducer
+    posts: postsReducer,
+    newPost: addPostReducer
 })

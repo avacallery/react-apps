@@ -1,6 +1,6 @@
 import posts from '../mock/posts'; 
 
-const INITIAL_STATE = {
+const INITIAL_STORE = {
     //list initial posts
     list: [...posts],
     loading: false,
@@ -8,7 +8,7 @@ const INITIAL_STATE = {
     count: 0,
 }
 
-export default (state = INITIAL_STATE, action) => {
+export default (state = INITIAL_STORE, action) => {
     //create switch statement on whatever the action is
     switch (action.type) {
         case "INCREMENT":
