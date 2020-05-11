@@ -8,15 +8,22 @@ const INITIAL_STORE = {
     count: 0,
 }
 
-export default (state = INITIAL_STORE, action) => {
+export default (store = INITIAL_STORE, action) => {
     //create switch statement on whatever the action is
     switch (action.type) {
         case "INCREMENT":
             return {
-                ...state, 
+                ...store, 
                 count: action.payload
             };
+        case "SUBMIT_FORM":
+            const newPost = action.payload; 
+            newPost.id = store.list[store.list.length -1].id +1;
+            return {
+                ...store, 
+                list: [...store.list, newPost],
+            }
         default: 
-        return state; 
+        return store; 
     }
 }

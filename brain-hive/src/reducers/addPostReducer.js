@@ -26,9 +26,9 @@ export default (store = INITIAL_STORE, action) => {
     switch (action.type) {
         case 'CHANGE':
             return {
-                ...this.store,
+                ...store,
                 form: {
-                    ...this.store.form,
+                    ...store.form,
                     [action.payload.field]: action.payload.value
                 }
             }
