@@ -34,10 +34,10 @@ class PostForm extends Component {
   state = { ...INITIAL_STATE };
 
   handleChange = (e) => {
-    this.setState({
-      ...this.state,
-      [e.target.id]: e.target.value,
-    });
+    // this.setState({
+    //   ...this.state,
+    //   [e.target.id]: e.target.value,
+    // });
       this.props.changeForm(e.target.id, e.target.value);
   };
 
@@ -46,14 +46,7 @@ class PostForm extends Component {
   //we don't have to use const because it becomes part of PostForm as a key
   handleSubmit = (e) => {
     e.preventDefault();
-    //{...this.state} pulls apart the object into a new object
-    const postData = { ...this.state };
-    console.log(postData);
-    postData.categories = postData.categories.split(',');
-    //send state back to App.js
-    this.props.addPost(postData);
-    this.setState({...INITIAL_STATE});
-    this.props.submitForm(postData); 
+    this.props.submitForm(this.props.newPost.form); 
   };
 
   render() {
