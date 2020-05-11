@@ -13,14 +13,15 @@ class PostList extends Component {
   state = {
     //state always needs to maintain the original posts
     query: "",
-    filteredPosts: [...this.props.posts],
+    //send posts from redux store
+    filteredPosts: [...this.props.posts.list],
   };
 
   handleChange = (e) => {
     //pull updated text
     const query = e.target.value;
 
-    const newPosts = this.props.posts.filter((post) => {
+    const newPosts = this.props.posts.list.filter((post) => {
       //test to see if value is part of the title
       if (post.title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
         return true;
@@ -39,7 +40,7 @@ class PostList extends Component {
   };
 
   handleClick = () => {
-    this.props.increment(this.props.count);
+    this.props.increment(this.props.posts.count);
   }
 
   renderPosts = () => {
@@ -66,7 +67,7 @@ class PostList extends Component {
         <div className="postList">{this.renderPosts()}</div>
         <div className="footer">
               <button onClick={this.handleClick}>increase</button>
-              <p>{this.props.count}</p>
+              <p>{this.props.posts.count}</p>
             </div>
       </div>
     );
@@ -90,9 +91,10 @@ const myStyles = {
   }
 };
 
+//PostList grabs post list data from the redux store instead of a parent through props
 const mapStoreToProps = (store) => {
   return {
-    count: store.posts.count,
+    posts: store.posts
   };
 };
 

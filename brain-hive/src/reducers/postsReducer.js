@@ -1,7 +1,8 @@
+import posts from '../mock/posts'; 
 
 const INITIAL_STATE = {
     //list initial posts
-    list: [],
+    list: [...posts],
     loading: false,
     errors: {}, 
     count: 0,

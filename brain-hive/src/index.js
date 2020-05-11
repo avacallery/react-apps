@@ -7,6 +7,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 //This function puts App on the DOM 
+//Provider allows us to connect App 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

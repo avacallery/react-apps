@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './store';
 import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
@@ -47,14 +45,13 @@ class App extends Component {
   //App.js maintains the state by using our routing system and deciding where to go based on what is selected
   render() {
     return (
-      <Provider store={store}>
         <BrowserRouter>
           <div className="App">
             <Navbar />
             <Switch>
               <Route path="/" exact>
                 <PostList
-                  posts={this.state.posts}
+                  // posts={this.state.posts}
                   handleSelect={this.handleSelect} />
               </Route>
               <Route path="/add" exact>
@@ -68,7 +65,6 @@ class App extends Component {
             </Switch>
           </div>
         </BrowserRouter>
-      </Provider>
     );
   }
 }
