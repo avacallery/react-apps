@@ -35,10 +35,12 @@ class ViewPost extends Component {
     }
 
     render() {
-        // const props = this.props; 
-        //extract postid from parameter
-        // const { postId } = this.props.match.params; 
-        const { post } = this.props;
+        const postId = parseInt(this.props.match.params.postId); 
+        const postIndex = this.props.posts.list.findIndex(
+            (item) => item.id === postId
+        ); 
+        const post = this.props.posts.list[postIndex];
+
         return (
             //react is only looking for one parent tag (div in this case)
             //the rest of the tags (h1, h2, p) all are children
@@ -58,7 +60,6 @@ class ViewPost extends Component {
             </div>
         );
     }
-    //.map you will use to display comments
 };
 
 const mapStoreToProps = store => {
@@ -70,4 +71,4 @@ const mapStoreToProps = store => {
 //nest higher order components 
 //withRouter(ViewPost) will run first
 //then connect() --which gives us access to redux -- will run with that result
-export default connect()(withRouter(ViewPost)); 
+export default connect(mapStoreToProps)(withRouter(ViewPost)); 

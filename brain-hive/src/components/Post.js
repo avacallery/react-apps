@@ -22,7 +22,7 @@ class Post extends Component {
             <div
                 className={'box'}
                 onClick={() => this.handleClick()}>
-                {this.state.clicked ? <Redirect to="/post/id"/> : null}
+                {this.state.clicked ? <Redirect to={`/post/${post.id}`}/> : null}
                 <div className={'postTitle'}>
                     <h2>{post.title}</h2>
                 </div>
