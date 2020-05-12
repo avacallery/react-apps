@@ -61,6 +61,13 @@ class ViewPost extends Component {
     //.map you will use to display comments
 };
 
+const mapStoreToProps = store => {
+    return {
+        posts: store.posts
+    }
+}
 
-
-export default withRouter(ViewPost); 
+//nest higher order components 
+//withRouter(ViewPost) will run first
+//then connect() --which gives us access to redux -- will run with that result
+export default connect()(withRouter(ViewPost)); 
