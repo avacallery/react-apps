@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux'; 
 import Button from './common/Button';
 
 class ViewPost extends Component {
@@ -59,6 +60,7 @@ class ViewPost extends Component {
     }
     //.map you will use to display comments
 };
+
 
 
 export default withRouter(ViewPost); 
