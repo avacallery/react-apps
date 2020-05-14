@@ -34,10 +34,6 @@ class PostForm extends Component {
   state = { ...INITIAL_STATE };
 
   handleChange = (e) => {
-    // this.setState({
-    //   ...this.state,
-    //   [e.target.id]: e.target.value,
-    // });
       this.props.changeForm(e.target.id, e.target.value);
   };
 
