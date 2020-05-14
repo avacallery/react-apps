@@ -3,154 +3,119 @@ import { connect } from 'react-redux';
 import { changeForm, submitForm } from '../actions';
 import Button from './common/Button';
 
-//static value in all caps 
-//should NOT be modified
+const PostForm = props => {
+  const { form } = props.newPost;
 
-const INITIAL_STATE = {
-  posterName: "",
-  resourceAuthor: "",
-  jobSkillLevel: "",
-  cohort: "",
-  title: "",
-  categories: "",
-  summary: "",
-  link: "",
-  resourceType: "",
-  datePublished: null,
-  videoLength: "",
-  timeToComplete: "",
-  raiting: "",
-  comments: []
-}
-
-//when we use this., we are using it because it is a class-based component
-//this.setState is the same thing as PostForm.setState
-//setState is PART of the component class
-//handleChange and submitChange are part of the PostForm class, so when we want to use it, we have to use this.handleChange()
-//the difference is using a local variable (not using this.) or a class state (using this.)
-//class-based components always need a render() method
-
-class PostForm extends Component {
-  state = { ...INITIAL_STATE };
-
-  handleChange = (e) => {
-      this.props.changeForm(e.target.id, e.target.value);
+  const handleChange = (e) => {
+    props.changeForm(e.target.id, e.target.value);
   };
 
-  //take state and load into our mock file array of objects
-  //methods are functions inside of a class (handleSubmit)
-  //we don't have to use const because it becomes part of PostForm as a key
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.props.submitForm(this.props.newPost.form); 
+    props.submitForm(props.newPost.form);
   };
 
-  render() {
-
-    const {form} = this.props.newPost; 
-
-    return (
-      <div>
-        <form style={myStyles.form}
-          onSubmit={(e) => this.handleSubmit(e)}>
-          <input
-            type="text"
-            id="posterName"
-            placeholder="Your Name"
-            value={form.posterName}
-            onChange={(e) => this.handleChange(e)}
-            required
-          />
-          <input
-            type="text"
-            id="resourceAuthor"
-            placeholder="Author Name"
-            value={form.resourceAuthor}
-            onChange={(e) => this.handleChange(e)}
-          />
-          {/* dropdown skill level */}
-          <div>
-            <select
-              id="jobSkillLevel"
-              value={form.jobSkillLevel}
-              onChange={(e) => this.handleChange(e)}
-            >
-              <option value="" disabled>
-                Author Skill Levels
+  return (
+    <div>
+      <form style={myStyles.form}
+        onSubmit={(e) => handleSubmit(e)}>
+        <input
+          type="text"
+          id="posterName"
+          placeholder="Your Name"
+          value={form.posterName}
+          onChange={(e) => handleChange(e)}
+          required
+        />
+        <input
+          type="text"
+          id="resourceAuthor"
+          placeholder="Author Name"
+          value={form.resourceAuthor}
+          onChange={(e) => handleChange(e)}
+        />
+        {/* dropdown skill level */}
+        <div>
+          <select
+            id="jobSkillLevel"
+            value={form.jobSkillLevel}
+            onChange={(e) => handleChange(e)}
+          >
+            <option value="" disabled>
+              Author Skill Levels
               </option>
-              <option value="Intro">Intro</option>
-              <option value="Intermediate">Intermediate</option>
-              <option value="Advanced">Advanced</option>
-            </select>
-          </div>
-          <input
-            type="text"
-            id="cohort"
-            placeholder="Cohort #"
-            value={form.cohort}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <input
-            type="text"
-            id="title"
-            placeholder="title"
-            value={form.title}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <input
-            type="text"
-            id="categories"
-            placeholder="Categories (seperate multiples with commas)"
-            value={form.categories}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <input
-            type="text"
-            id="link"
-            placeholder="Resource Link"
-            value={form.link}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <input
-            type="text"
-            id="resourceType"
-            placeholder="Resource Type"
-            value={form.resourceType}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <input
-            type="date"
-            id="datePublished"
-            placeholder="Published Date"
-            value={form.datePublished}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <input
-            type="number"
-            id="videoLength"
-            placeholder="Length of Video (optional)"
-            value={form.videoLength}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <input
-            type="number"
-            id="timeToComplete"
-            placeholder="Time to complete resource"
-            value={form.timeToComplete}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <input
-            type="number"
-            id="rating"
-            placeholder="1 to 5 raiting"
-            value={form.rating}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <Button type="Submit">Submit</Button>
-        </form>
-      </div>
-    );
-  }
+            <option value="Intro">Intro</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+        <input
+          type="text"
+          id="cohort"
+          placeholder="Cohort #"
+          value={form.cohort}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="text"
+          id="title"
+          placeholder="title"
+          value={form.title}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="text"
+          id="categories"
+          placeholder="Categories (seperate multiples with commas)"
+          value={form.categories}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="text"
+          id="link"
+          placeholder="Resource Link"
+          value={form.link}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="text"
+          id="resourceType"
+          placeholder="Resource Type"
+          value={form.resourceType}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="date"
+          id="datePublished"
+          placeholder="Published Date"
+          value={form.datePublished}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="number"
+          id="videoLength"
+          placeholder="Length of Video (optional)"
+          value={form.videoLength}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="number"
+          id="timeToComplete"
+          placeholder="Time to complete resource"
+          value={form.timeToComplete}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="number"
+          id="rating"
+          placeholder="1 to 5 raiting"
+          value={form.rating}
+          onChange={(e) => handleChange(e)}
+        />
+        <Button type="Submit">Submit</Button>
+      </form>
+    </div>
+  );
 }
 
 const myStyles = {
