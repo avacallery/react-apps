@@ -6,7 +6,7 @@ import reducers from './reducers';
 
 const INITIAL_STATE = {}; 
 
-//compose composes the middleware to the store can utilize it
+//compose composes the middleware and combines into a single object so the store can utilize it
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const middleware = [thunk];
