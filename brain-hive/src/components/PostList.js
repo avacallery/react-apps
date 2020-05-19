@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'; 
+import { connect } from 'react-redux';
 import { increment, changeQuery } from '../actions';
 import Post from './Post';
 
@@ -36,13 +36,15 @@ class PostList extends Component {
       if (post.summary.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
         return true;
       }
-        return false;
+      return false;
     });
 
     this.setState({
-      query: query, 
+      query: query,
       filteredPosts: newPosts,
-    })
+    });
+
+    this.props.changeQuery(query);
   };
 
   handleClick = () => {
@@ -67,14 +69,17 @@ class PostList extends Component {
           <input style={myStyles.input}
             type="text"
             placeholder="Search"
+            //value is using redux to track changes
+            //time travel should work
+            value={this.props.search.query}
             onChange={this.handleChange}
-            />
+          />
         </div>
         <div className="postList">{this.renderPosts()}</div>
         <div className="footer">
-              <button onClick={this.handleClick}>increase</button>
-              <p>{this.props.posts.count}</p>
-            </div>
+          <button onClick={this.handleClick}>increase</button>
+          <p>{this.props.posts.count}</p>
+        </div>
       </div>
     );
   };
@@ -108,6 +113,12 @@ const mapStoreToProps = (store) => {
   };
 };
 
-export default connect(mapStoreToProps, {
-  increment: increment
-})(PostList); 
+const mapActionsToProps = () => {
+  return {
+    increment, 
+    changeQuery
+  };
+};
+
+export default connect(mapStoreToProps, mapActionsToProps()
+)(PostList); 
