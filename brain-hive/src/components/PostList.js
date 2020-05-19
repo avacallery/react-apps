@@ -9,6 +9,12 @@ import Post from './Post';
 //PostList hands the baton of handleSelect to Post.js
 
 class PostList extends Component {
+  //CHALLENGE
+  //move state into reducer (filteredPostsReducer.js)
+  //create actions file for filteredPostsActions.js
+  //or we can add into postsReducer.js
+
+  //REMOVE STATE AND USE REDUX
 
   state = {
     //state always needs to maintain the original posts
