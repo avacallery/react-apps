@@ -7,9 +7,13 @@
 import {combineReducers} from 'redux'; 
 import postsReducer from './postsReducer';
 import addPostReducer from './addPostReducer';
+import searchReducer from './searchReducer'; 
 
 export default combineReducers({
     //an object that gives each reducer a key
+    //each reducer handles different things
+    //we can give whatever key we want to our reducers!
     posts: postsReducer,
-    newPost: addPostReducer
+    newPost: addPostReducer,
+    search: searchReducer
 })

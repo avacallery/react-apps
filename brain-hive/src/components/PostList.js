@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
-import { increment } from '../actions';
+import { increment, changeQuery } from '../actions';
 import Post from './Post';
 
 //PostList is iterating through the array of posts by using .map and displaying a new array of posts
@@ -98,11 +98,13 @@ const myStyles = {
 };
 
 //PostList grabs post list data from the redux store instead of a parent through props
+//this works because of connect() below
 //we bring in the reducer through here (store)
 //store has access to our reducer which then has access to our posts
 const mapStoreToProps = (store) => {
   return {
-    posts: store.posts
+    posts: store.post,
+    search: store.search
   };
 };
 
