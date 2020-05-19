@@ -98,6 +98,8 @@ const myStyles = {
 };
 
 //PostList grabs post list data from the redux store instead of a parent through props
+//we bring in the reducer through here (store)
+//store has access to our reducer which then has access to our posts
 const mapStoreToProps = (store) => {
   return {
     posts: store.posts
