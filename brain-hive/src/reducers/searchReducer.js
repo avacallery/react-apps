@@ -1,14 +1,16 @@
 import {CHANGE_QUERY} from '../actions/types'; 
+import posts from '../mock/posts'; 
 
 const INITIAL_STORE = {
     //what data is normally in this store?
-    list: [], 
+    list: [...posts], 
     query: "", 
     loading: false, 
     errors: {}, 
 }
 
 export default (store = INITIAL_STORE, action) => {
+    console.log(action);
     switch(action.type) {
         case CHANGE_QUERY: 
         return {
