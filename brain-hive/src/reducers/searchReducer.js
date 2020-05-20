@@ -14,7 +14,8 @@ export default (store = INITIAL_STORE, action) => {
         return {
             ...store, 
             //this is how we send the action (payload)
-            query: action.payload
+            query: action.payload.query, 
+            list: action.payload.list
         }
         //every reducer has to send an object of some kind (state) to keep track of the changes
         default: 
